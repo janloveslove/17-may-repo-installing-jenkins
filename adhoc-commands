@@ -1,0 +1,5 @@
+ansible all -m command -a "hostname -i"
+ansible all -m command -a "date"
+ansible all -m yum -a "name=httpd" -b
+ansible all -m yum -a "name=httpd state=present"
+ansible all -m service -a "name=httpd state=started"
