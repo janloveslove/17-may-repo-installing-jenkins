@@ -14,3 +14,11 @@
        name: wget
        state: present
   
+   - name: saving jenkins repo in yum repos
+     get_url:
+       url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+       dest: /etc/yum.repos.d/jenkinsrepo
+
+   - name: putting jenkins key
+      rpm_key: rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+      state: present 
