@@ -22,3 +22,16 @@
    - name: putting jenkins key
       rpm_key: rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
       state: present 
+
+   - name: installling jenkins
+     yum:
+       name: jenkins      
+       state: present
+   
+   - name: start jenkins
+     service:
+       name: jenkins
+       state: started
+       enabled: yes 
+
+
