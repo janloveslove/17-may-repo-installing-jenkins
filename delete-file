@@ -1,0 +1,9 @@
+---
+- name: deleteing a file
+  hosts: all
+  become: true
+  task:
+  - name: deleting a file
+    file:
+     path: /tmp/dir1
+     state: absent

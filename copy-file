@@ -1,0 +1,9 @@
+---
+- name: copying a file
+  hosts: all
+  become: true
+  tasks:
+  - name: copy a file
+    copy:
+     src: /tmp/file1
+     dest: /home/admin/
