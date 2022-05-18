@@ -1,5 +1,16 @@
+
+
 ---
+- name: creating users
+  hosts: all
+  become: true
+  tasks:
+  - name: creating users
+    user:
+      name: akash
+=======
 - hosts: all
   become: yes
   tasks:
   - user: name=hari
+>>>>>>> 53b95ffeeea36825822f8080bf006e6ce3b6d87f
