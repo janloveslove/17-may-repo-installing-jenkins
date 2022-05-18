@@ -8,6 +8,7 @@
       name: httpd
       state: present
     notify: running service
+   handlers:
    - name: running service
      service:
       name: httpd
