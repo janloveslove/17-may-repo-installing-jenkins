@@ -1,0 +1,16 @@
+---
+- name: install on RH and Debian
+  hosts: all
+  become: true
+  tasks:
+  - name: install on Redhat
+    yum:
+     name: httpd
+     state: present
+    when: ansible_os_family == "ReHat"
+  - name: install on debian
+    apt:
+     name: httpd
+     state: present
+    when: ansible_os_family == "Debian"
+
